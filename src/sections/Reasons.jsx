@@ -19,7 +19,7 @@ export default function Reasons() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-3 mb-4">
+          <div className="d-inline-flex align-items-center gap-3 mb-4">
             <FiStar className="text-yellow-400 text-2xl" />
             <h2 className="text-3xl md:text-5xl font-display text-white">
               Why You&apos;re <span className="text-gradient">Amazing</span>

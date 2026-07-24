@@ -87,8 +87,8 @@ export default function Surprise() {
                   </div>
                 </div>
 
-                <div className="mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-semibold text-lg shadow-xl shadow-purple-500/25 hover:shadow-2xl hover:shadow-purple-500/40 transition-all duration-300">
-                  <FiGift className="inline mr-2" />
+                <div className="mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white fw-semibold text-lg shadow-xl shadow-purple-500/25 hover:shadow-2xl hover:shadow-purple-500/40 transition-all duration-300 hover-lift">
+                  <FiGift className="d-inline me-2" />
                   Open Your Surprise
                 </div>
               </motion.button>

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { FiHeart } from 'react-icons/fi'
 import InteractiveBackground from '../components/InteractiveBackground'
 import { content } from '../data/content'
 
@@ -77,7 +76,7 @@ function EmojiButton({ emoji, onClick }) {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            {['✨', '💖', '🌟', '⭐', '💫'][Math.floor(Math.random() * 5)]}
+            {['✨', '🥰', '🌟', '⭐', '💫'][Math.floor(Math.random() * 5)]}
           </motion.span>
         ))}
       </AnimatePresence>
@@ -98,7 +97,7 @@ export default function BirthdayMessage() {
   }
 
   const renderBody = (text) => {
-    const emojiRegex = /([💖✨🌟💫🎉😄🤗💪🌍🌺])/g
+    const emojiRegex = /([🥰✨🌟💫🎉😊❤️💪🌍🌸])/g
     const parts = text.split(emojiRegex)
     return parts.map((part, i) => {
       if (emojiRegex.test(part)) {
@@ -129,9 +128,9 @@ export default function BirthdayMessage() {
             <motion.div
               whileHover={{ scale: 1.1, rotate: [0, -10, 10, 0] }}
               className="w-12 h-12 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center cursor-pointer"
-              onClick={() => addFlyingEmoji('💖')}
+              onClick={() => addFlyingEmoji('🥰')}
             >
-              <FiHeart className="text-white text-lg" />
+              <span className="text-white text-lg">🥰</span>
             </motion.div>
             <h2 className="text-3xl md:text-4xl font-display text-white">
               A Letter for <span className="text-gradient">{content.name}</span>
@@ -216,10 +215,10 @@ export default function BirthdayMessage() {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => addFlyingEmoji('💖')}
+              onClick={() => addFlyingEmoji('🥰')}
               className="mt-4 text-2xl opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              💖
+              🥰
             </motion.button>
           </div>
         </motion.div>

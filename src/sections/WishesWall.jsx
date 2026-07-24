@@ -76,7 +76,7 @@ export default function WishesWall() {
                 </motion.div>
 
                 {opened !== i && (
-                  <p className="text-white/30 text-sm italic">Tap to open 💌</p>
+                  <p className="text-white/30 text-sm fst-italic">Tap to open 💌</p>
                 )}
               </motion.button>
             </motion.div>

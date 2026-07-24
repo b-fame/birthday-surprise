@@ -7,7 +7,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative py-12 bg-[#0f0c29] border-t border-white/5">
+    <footer className="position-relative py-5 bg-[#0f0c29] border-top border-white/5">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <div className="flex justify-center gap-4">
+          <div className="d-flex justify-content-center gap-3">
             {[FiGithub, FiTwitter, FiInstagram].map((Icon, i) => (
               <motion.a
                 key={i}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiHeart } from 'react-icons/fi'
+import { FiMenu, FiX } from 'react-icons/fi'
 
 const navItems = [
   { label: 'Home', href: '#welcome' },
@@ -56,8 +56,7 @@ export default function Navigation() {
             onClick={() => scrollTo('#welcome')}
             className="flex items-center gap-2 text-white font-semibold text-lg"
           >
-            <FiHeart className="text-pink-400" />
-            <span className="font-script text-xl">Viii</span>
+            <img src={`${process.env.PUBLIC_URL}/logo.svg`} alt="viii" className="h-8 w-auto drop-shadow-lg" />
           </button>
 
           <div className="hidden md:flex items-center gap-1 flex-wrap justify-end max-w-[70%]">

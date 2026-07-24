@@ -1,108 +1,54 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FiMusic, FiPause, FiPlay, FiChevronDown } from 'react-icons/fi'
+import { content } from '../data/content'
 
-const songVideos = [
-  { id: '5-pGieBUPmo', title: 'Close Friend', artist: 'Maxwell Gold Records', emoji: '🎵' },
-  { id: '2Vv-BfVoq4g', title: 'Perfect', artist: 'Ed Sheeran', emoji: '🎵' },
-  { id: 'UqyT8IEB3Pg', title: 'Count On Me', artist: 'Bruno Mars', emoji: '🎶' },
-  { id: 'JgM9eBy3_Ug', title: "You've Got a Friend", artist: 'Carole King', emoji: '🎵' },
-  { id: 'mWN1D0UApGY', title: 'Best Friend', artist: 'Jason Mraz', emoji: '🎶' },
-  { id: '1TO48Cnl66w', title: 'Thank You', artist: 'Dido', emoji: '🎵' },
-  { id: 'G5ZqD1lOB0', title: "I'll Be There", artist: 'The Jackson 5', emoji: '🎶' },
-]
-
-let youtubeReady = false
-let readyCallbacks = []
-
-function onYouTubeReady() {
-  youtubeReady = true
-  readyCallbacks.forEach((cb) => cb())
-  readyCallbacks = []
-}
-
-function waitForYouTube() {
-  return new Promise((resolve) => {
-    if (youtubeReady) return resolve()
-    readyCallbacks.push(resolve)
-  })
-}
-
-if (typeof window !== 'undefined' && !window.__ytInjected) {
-  window.__ytInjected = true
-  const tag = document.createElement('script')
-  tag.src = 'https://www.youtube.com/iframe_api'
-  const first = document.getElementsByTagName('script')[0]
-  first.parentNode.insertBefore(tag, first)
-  window.onYouTubeIframeAPIReady = onYouTubeReady
-}
+const audioBase = `${process.env.PUBLIC_URL}/Audio`
 
 export default function MusicPlayer() {
   const [isOpen, setIsOpen] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentSong, setCurrentSong] = useState(0)
   const [progress, setProgress] = useState(0)
-  const playerRef = useRef(null)
-  const containerRef = useRef(null)
+  const audioRef = useRef(null)
   const intervalRef = useRef(null)
 
   const stopAudio = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current)
-    if (playerRef.current && playerRef.current.destroy) {
-      try { playerRef.current.stopVideo(); playerRef.current.destroy() } catch (e) {}
+    if (audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current.src = ''
     }
-    playerRef.current = null
     setIsPlaying(false)
     setProgress(0)
   }, [])
 
-  const playSong = useCallback(async (index) => {
+  const playSong = useCallback((index) => {
     stopAudio()
-    const video = songVideos[index]
+    const song = content.songs[index]
+    if (!song.file) return
 
-    await waitForYouTube()
+    const audio = new Audio(`${audioBase}/${encodeURIComponent(song.file)}`)
+    audioRef.current = audio
 
-    const div = document.createElement('div')
-    div.id = 'youtube-player-container'
-    if (containerRef.current) {
-      containerRef.current.innerHTML = ''
-      containerRef.current.appendChild(div)
-    }
-
-    const player = new window.YT.Player(div.id, {
-      height: '0',
-      width: '0',
-      videoId: video.id,
-      playerVars: {
-        autoplay: 1,
-        controls: 0,
-        disablekb: 1,
-        fs: 0,
-        modestbranding: 1,
-        rel: 0,
-      },
-      events: {
-        onReady: (e) => {
-          e.target.playVideo()
-        },
-        onStateChange: (e) => {
-          if (e.data === window.YT.PlayerState.PLAYING) {
-            setIsPlaying(true)
-            const duration = e.target.getDuration()
-            intervalRef.current = setInterval(() => {
-              try {
-                const current = e.target.getCurrentTime()
-                setProgress((current / duration) * 100)
-              } catch (err) {}
-            }, 1000)
-          }
-          if (e.data === window.YT.PlayerState.ENDED) {
-            stopAudio()
-          }
-        },
-      },
+    audio.addEventListener('loadedmetadata', () => {
+      audio.play().catch(() => {})
     })
-    playerRef.current = player
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        setProgress((audio.currentTime / audio.duration) * 100)
+      }
+    })
+
+    audio.addEventListener('ended', () => {
+      stopAudio()
+    })
+
+    audio.addEventListener('play', () => setIsPlaying(true))
+    audio.addEventListener('pause', () => setIsPlaying(false))
+
+    audio.load()
   }, [stopAudio])
 
   const togglePlay = useCallback(() => {
@@ -118,14 +64,24 @@ export default function MusicPlayer() {
     if (isPlaying) playSong(index)
   }
 
+  const changeSongRef = useRef(changeSong)
+  changeSongRef.current = changeSong
+
+  useEffect(() => {
+    const handler = (e) => {
+      changeSongRef.current(e.detail)
+      setIsOpen(true)
+    }
+    window.addEventListener('music-play-song', handler)
+    return () => window.removeEventListener('music-play-song', handler)
+  }, [])
+
   useEffect(() => {
     return () => stopAudio()
   }, [stopAudio])
 
   return (
     <>
-      <div ref={containerRef} className="hidden" />
-
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full glass hover:shadow-xl hover:shadow-purple-500/20 flex items-center justify-center transition-all duration-300 group"
@@ -180,7 +136,7 @@ export default function MusicPlayer() {
             )}
 
             <div className="space-y-2 max-h-48 overflow-y-auto custom-scrollbar">
-              {songVideos.map((video, i) => (
+              {content.songs.map((song, i) => (
                 <button
                   key={i}
                   onClick={() => changeSong(i)}
@@ -190,10 +146,10 @@ export default function MusicPlayer() {
                       : 'text-white/60 hover:bg-white/5 hover:text-white/80'
                   }`}
                 >
-                  <span className="text-lg">{video.emoji}</span>
+                  <span className="text-lg">{song.emoji}</span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium truncate">{video.title}</p>
-                    <p className="text-xs text-white/50 truncate">{video.artist}</p>
+                    <p className="text-sm font-medium truncate">{song.title}</p>
+                    <p className="text-xs text-white/50 truncate">{song.artist}</p>
                   </div>
                   {currentSong === i && isPlaying && (
                     <motion.span
@@ -209,7 +165,7 @@ export default function MusicPlayer() {
             <div className="mt-3 pt-3 border-t border-white/10">
               <p className="text-xs text-white/40 text-center">
                 {isPlaying
-                  ? `Now Playing: ${songVideos[currentSong].title}`
+                  ? `Now Playing: ${content.songs[currentSong].title}`
                   : 'Tap play to start'}
               </p>
             </div>

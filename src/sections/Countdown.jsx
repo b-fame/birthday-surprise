@@ -73,7 +73,7 @@ export default function CountdownSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3 }}
-            className="flex justify-center gap-3 md:gap-6"
+            className="d-flex justify-content-center gap-3 md:gap-6"
           >
             <TimeBlock value={days} label="Days" />
             <TimeBlock value={hours} label="Hours" />

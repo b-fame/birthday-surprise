@@ -89,7 +89,7 @@ export default function MemoriesGallery() {
           </p>
         </motion.div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 hover-lift">
           {content.memories.map((memory, i) => (
             <motion.button
               key={memory.id}

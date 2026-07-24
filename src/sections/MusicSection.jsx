@@ -7,6 +7,10 @@ import { content } from '../data/content'
 export default function MusicSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
+  const playSong = (index) => {
+    window.dispatchEvent(new CustomEvent('music-play-song', { detail: index }))
+  }
+
   return (
     <section id="music" className="relative py-20 md:py-32" style={{ background: 'linear-gradient(180deg, #24243e, #0f0c29)' }}>
       <InteractiveBackground colors={['rgba(168,85,247,0.06)', 'rgba(59,130,246,0.06)', 'rgba(244,63,94,0.06)']} />
@@ -40,6 +44,7 @@ export default function MusicSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 1.02, x: 4 }}
+                onClick={() => playSong(i)}
                 className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 group cursor-pointer"
               >
                 <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 flex items-center justify-center text-white shadow-lg group-hover:shadow-purple-500/30 transition-shadow">

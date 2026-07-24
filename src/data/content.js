@@ -13,18 +13,18 @@ export const content = {
 
   letter: {
     salutation: 'My Dearest Viii,',
-    body: `On this beautiful day, I find myself thinking about how incredibly lucky I am to have you in my life. You are not just a friend; you are family. You are the sister I never had, the confidante I always needed, and the light that brightens even my darkest days. 💖
-
-Your laughter is contagious 😄, your kindness knows no bounds 🤗, and your strength inspires me every single day 💪. You have a way of making everyone around you feel seen, heard, and loved ✨.
-
+    body: `On this beautiful day, I find myself thinking about how incredibly lucky I am to have you in my life. You are not just a friend; you are family. You are the sister I never had, the confidante I always needed, and the light that brightens even my darkest days. 🥰
+    
+Your laughter is contagious 😊, your kindness knows no bounds ❤️, and your strength inspires me every single day 💪. You have a way of making everyone around you feel seen, heard, and loved ✨.
+    
 Today, we celebrate you — not just for the amazing person you are, but for the incredible impact you have on everyone fortunate enough to know you 🌟. May your day be filled with as much joy and love as you bring to others 🎉.
-
+    
 Happy Birthday, Viii. You deserve all the happiness in the world 🌍💫`,
     closing: 'With all my love,',
     signature: 'Bfame',
     quote: 'A true friend is the greatest of all blessings, and you are truly one of a kind.',
     quoteAuthor: '',
-    emojis: ['💖', '✨', '🌟', '💫', '🎉', '😄', '🤗', '💪', '🌍', '🌺'],
+    emojis: ['🥰', '✨', '🌟', '💫', '🎉', '😊', '❤️', '💪', '🌍', '🌸'],
   },
 
   memories: [
@@ -73,12 +73,13 @@ Happy Birthday, Viii. You deserve all the happiness in the world 🌍💫`,
   ],
 
   songs: [
-    { title: 'Perfect', artist: 'Ed Sheeran', emoji: '🎵' },
-    { title: 'Count On Me', artist: 'Bruno Mars', emoji: '🎶' },
-    { title: 'You\'ve Got a Friend', artist: 'Carole King', emoji: '🎵' },
-    { title: 'Best Friend', artist: 'Jason Mraz', emoji: '🎶' },
-    { title: 'Thank You', artist: 'Dido', emoji: '🎵' },
-    { title: 'I\'ll Be There', artist: 'The Jackson 5', emoji: '🎶' },
+    { title: 'Perfect', artist: 'Ed Sheeran', emoji: '🎵', file: 'Ed Sheeran - Perfect (Official Music Video).webm' },
+    { title: 'Count On Me', artist: 'Bruno Mars', emoji: '🎶', file: 'Bruno Mars - Count on Me (Official Lyric Video).webm' },
+    { title: 'Close Friend', artist: 'Maxwell', emoji: '🎵', file: 'Close Friend.webm' },
+    { title: 'You\'ve Got a Friend', artist: 'Carole King', emoji: '🎵', file: 'Carole King - You\'ve Got a Friend (Official Audio).webm' },
+    { title: 'Best Friend', artist: 'Jason Mraz', emoji: '🎶', file: 'Jason Mraz - Best Friend (Official Audio).webm' },
+    { title: 'Thank You', artist: 'Dido', emoji: '🎵', file: 'Dido - Thank You (Official Video).webm' },
+    { title: 'I\'ll Be There', artist: 'The Jackson 5', emoji: '🎶', file: 'Jackson 5-I\'ll Be There.webm' },
   ],
 
   surpriseMessages: [
