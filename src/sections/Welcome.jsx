@@ -7,10 +7,10 @@ import { content } from '../data/content'
 export default function Welcome() {
 
   const typedText = useTypewriter([
-    'Happy Birthday, Viii! ❤️',
-    'You are truly one of a kind ✨',
-    "Let's celebrate you! 🎉",
-    'You make the world brighter 🌟',
+    "Preparing something special for you! 🎉",
+    'Everything is coming together ✨',
+    "Your day is almost here! 🎈",
+    "Getting ready to celebrate you 🌟",
   ], 60, 35, 2500)
 
   const scrollTo = (id) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -56,7 +56,7 @@ export default function Welcome() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-3 md:mb-4"
         >
-          <span className="text-gradient">Happy Birthday</span>
+          <span className="text-gradient">Getting Ready</span>
         </motion.h1>
 
         <motion.div
@@ -103,7 +103,7 @@ export default function Welcome() {
           data-bs-title="Click to start!"
         >
           <FiHeart className="group-hover:scale-110 transition-transform" />
-          Open Your Surprise
+          See What's Being Prepared
           <span className="position-absolute inset-0 rounded-2xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
         </motion.button>
 

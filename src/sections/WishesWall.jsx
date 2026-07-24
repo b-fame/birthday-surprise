@@ -32,7 +32,7 @@ export default function WishesWall() {
           <div className="inline-flex items-center gap-3 mb-4">
             <FiMessageSquare className="text-pink-400 text-2xl" />
             <h2 className="text-3xl md:text-5xl font-display text-white">
-              Birthday <span className="text-gradient-gold">Wishes</span>
+              <span className="text-gradient-gold">Wishes</span>
             </h2>
           </div>
           <p className="text-white/50 text-lg max-w-xl mx-auto">

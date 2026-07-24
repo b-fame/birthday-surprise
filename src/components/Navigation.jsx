@@ -5,7 +5,6 @@ import { FiMenu, FiX } from 'react-icons/fi'
 const navItems = [
   { label: 'Home', href: '#welcome' },
   { label: 'Letter', href: '#message' },
-  { label: 'Memories', href: '#memories' },
   { label: 'Timeline', href: '#timeline' },
   { label: 'Reasons', href: '#reasons' },
   { label: 'Wishes', href: '#wishes' },

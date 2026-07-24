@@ -35,7 +35,7 @@ export default function LoadingScreen() {
             transition={{ delay: 0.3 }}
             className="text-3xl md:text-4xl font-display text-white mb-8"
           >
-            Happy Birthday{' '}
+            Getting Ready for{' '}
             <span
               className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
             >
@@ -60,7 +60,7 @@ export default function LoadingScreen() {
             transition={{ delay: 0.8 }}
             className="mt-8 text-white/40 text-sm"
           >
-            Loading something special...
+            Preparing something special...
           </motion.p>
         </motion.div>
       )}

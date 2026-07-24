@@ -45,7 +45,7 @@ export default function CountdownSection() {
           <div className="inline-flex items-center gap-3 mb-4">
             <FiClock className="text-pink-400 text-2xl" />
             <h2 className="text-3xl md:text-5xl font-display text-white">
-              {isBirthday ? "It's Your Day! 🎉" : 'Countdown to Your Day'}
+              {isBirthday ? "It's Your Day! 🎉" : 'Preparing for Your Day'}
             </h2>
           </div>
 
@@ -64,7 +64,7 @@ export default function CountdownSection() {
           >
             <div className="text-7xl md:text-9xl mb-6">🎉🎂🎉</div>
             <h3 className="text-4xl md:text-6xl font-display text-gradient-gold mb-4">
-              Happy Birthday, {content.name}!
+              It's Your Day, {content.name}!
             </h3>
             <p className="text-white/60 text-xl">Today is ALL about YOU!</p>
           </motion.div>

@@ -42,7 +42,7 @@ export default function Footer() {
           </p>
 
           <p className="text-white/20 text-xs">
-            &copy; {year} &bull; All rights reserved &bull; {content.name}&apos;s Birthday
+            &copy; {year} &bull; All rights reserved &bull; {content.name}
           </p>
 
           <div className="flex justify-center">

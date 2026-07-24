@@ -7,24 +7,23 @@ export const content = {
   birthday: '2026-07-30',
 
   welcome: {
-    title: 'Happy Birthday',
-    subtitle: 'To someone who makes the world brighter, simply by being in it.',
+    title: 'Getting Ready for Your Day',
+    subtitle: 'Every moment is a step closer to celebrating you.',
   },
 
   letter: {
     salutation: 'My Dearest Viii,',
-    body: `On this beautiful day, I find myself thinking about how incredibly lucky I am to have you in my life. You are not just a friend; you are family. You are the sister I never had, the confidante I always needed, and the light that brightens even my darkest days. 🥰
+    body: `Get ready, because something beautiful is being prepared just for you. These past few days, I've been putting everything together — not just a celebration, but a moment that truly reflects how much you mean to me.
     
-Your laughter is contagious 😊, your kindness knows no bounds ❤️, and your strength inspires me every single day 💪. You have a way of making everyone around you feel seen, heard, and loved ✨.
+I need you to be prepared. Prepared to feel loved, cherished, and celebrated like never before. Your day is coming, and I want you to know that every little detail has been thought of with you in mind.
     
-Today, we celebrate you — not just for the amazing person you are, but for the incredible impact you have on everyone fortunate enough to know you 🌟. May your day be filled with as much joy and love as you bring to others 🎉.
+So when the time comes, just smile, open your heart, and let it all in. You deserve every bit of this and more.
     
-Happy Birthday, Viii. You deserve all the happiness in the world 🌍💫`,
+Be ready, Viii. Something special is on its way.`,
     closing: 'With all my love,',
     signature: 'Bfame',
     quote: 'A true friend is the greatest of all blessings, and you are truly one of a kind.',
     quoteAuthor: '',
-    emojis: ['🥰', '✨', '🌟', '💫', '🎉', '😊', '❤️', '💪', '🌍', '🌸'],
   },
 
   memories: [
@@ -51,7 +50,7 @@ Happy Birthday, Viii. You deserve all the happiness in the world 🌍💫`,
     { year: 'Mar 2026', title: 'Getting Closer', description: 'Late night talks, shared laughs, and moments that started to mean everything. 🌙', icon: '🌙' },
     { year: 'Apr 2026', title: 'Building Memories', description: 'Every day with you became a new adventure. From spontaneous calls to deep conversations. 📸', icon: '📸' },
     { year: 'Jun 2026', title: 'Growing Stronger', description: 'Through every laugh and every talk, our bond grew unshakable. 🤝', icon: '🤝' },
-    { year: 'Jul 2026', title: 'Celebrating You', description: 'Today, we celebrate YOU — the most amazing person I have ever known. Happy Birthday! 🎉🎂', icon: '🎉' },
+    { year: 'Jul 2026', title: 'Preparing for You', description: 'Getting everything ready to celebrate the most amazing person I have ever known. Your day is almost here! 🎉🎂', icon: '🎉' },
   ],
 
   reasons: [
@@ -64,11 +63,11 @@ Happy Birthday, Viii. You deserve all the happiness in the world 🌍💫`,
   ],
 
   wishes: [
-    { name: 'Your Biggest Fan', message: 'Happy Birthday to the most amazing person I know! May your year be filled with endless joy and beautiful surprises.', emoji: '🎂' },
+    { name: 'Your Biggest Fan', message: 'Everything is being prepared for the most amazing day for the most amazing person I know!', emoji: '🎂' },
     { name: 'Secret Admirer', message: 'The world is a better place with you in it. Keep shining, beautiful soul!', emoji: '💫' },
-    { name: 'Forever Friend', message: 'Through every season, every change, every mile — you remain my favorite person. Happy Birthday!', emoji: '💖' },
+    { name: 'Forever Friend', message: 'Through every season, every change, every mile — you remain my favorite person. Getting ready to celebrate you!', emoji: '💖' },
     { name: 'The Universe', message: 'You are made of stardust and dreams. Never forget how extraordinary you are.', emoji: '🌌' },
-    { name: 'Heart Speaks', message: 'Some people make the world brighter just by being in it. That\'s you. Happy Birthday!', emoji: '🌞' },
+    { name: 'Heart Speaks', message: 'Some people make the world brighter just by being in it. That\'s you. Preparing something special for you!', emoji: '🌞' },
     { name: 'Destiny', message: 'Some friendships are written in the stars. Ours is one of them. Celebrate YOU today!', emoji: '⭐' },
   ],
 
@@ -83,11 +82,11 @@ Happy Birthday, Viii. You deserve all the happiness in the world 🌍💫`,
   ],
 
   surpriseMessages: [
-    'You are the most beautiful soul I know! ✨',
-    'The world is lucky to have you! 🌟',
-    'Never forget how amazing you are! 💫',
-    'Your smile lights up the universe! 🌙',
+    'Getting ready to celebrate the most beautiful soul I know! ✨',
+    'The world is getting ready for you! 🌟',
+    'Preparing something as amazing as you are! 💫',
+    'Everything is being set for your special moments! 🌙',
     'You are loved more than you know! 💖',
-    'Today and always, you are celebrated! 🎉',
+    'Almost time to celebrate you! 🎉',
   ],
 }

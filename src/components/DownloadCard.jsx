@@ -75,7 +75,7 @@ export default function DownloadCard() {
               >
                 <FiX />
               </button>
-              <h3 className="text-white font-semibold text-lg mb-4">Download Birthday Card</h3>
+              <h3 className="text-white font-semibold text-lg mb-4">Download Card</h3>
               <div className="space-y-3">
                 <button
                   onClick={downloadImage}

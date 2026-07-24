@@ -11,7 +11,6 @@ import DownloadCard from './components/DownloadCard'
 import EasterEgg from './components/EasterEgg'
 import Welcome from './sections/Welcome'
 import BirthdayMessage from './sections/BirthdayMessage'
-import MemoriesGallery from './sections/MemoriesGallery'
 import Timeline from './sections/Timeline'
 import Reasons from './sections/Reasons'
 import WishesWall from './sections/WishesWall'
@@ -84,7 +83,6 @@ export default function App() {
           <main>
             <Welcome />
             <BirthdayMessage />
-            <MemoriesGallery />
             <Timeline />
             <Reasons />
             <WishesWall />
